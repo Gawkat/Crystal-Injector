@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Crystal-Injector")]
+[assembly: AssemblyTitle("Crystal Injector")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Crystal-Injector")]
+[assembly: AssemblyProduct("Crystal Injector")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("57f9c124-9fcc-4972-a261-efb1db344102")]
+[assembly: Guid("e0c569b9-8e04-44f2-86e6-95382f4718b4")]
 
 // Version information for an assembly consists of the following four values:
 //
