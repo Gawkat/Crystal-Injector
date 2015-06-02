@@ -41,7 +41,20 @@ namespace Crystal_Injector {
             dllButton.UseVisualStyleBackColor = true;
             dllButton.Click += dllButton_Click;
 
+            // 
+            // processButton
+            // 
+            processButton.Cursor = System.Windows.Forms.Cursors.Default;
+            processButton.Location = new System.Drawing.Point(0, 50);
+            processButton.Name = "processBUtton";
+            processButton.Size = new System.Drawing.Size(100, 23);
+            processButton.TabIndex = 0;
+            processButton.Text = "Choose Process";
+            processButton.UseVisualStyleBackColor = true;
+            processButton.Click += processButton_Click;
+
             Controls.Add(dllButton);
+            Controls.Add(processButton);
 
             ResumeLayout();
         }
@@ -64,7 +77,8 @@ namespace Crystal_Injector {
         }
 
         private void processButton_Click(object sender, EventArgs e) {
-
+            ProcessWindow processWindow = new ProcessWindow();
+            processWindow.ShowDialog();
         }
 
         private void injectButton_Click(object sender, EventArgs e) {

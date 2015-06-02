@@ -51,10 +51,19 @@
     <Compile Include="CrystalWindow.Designer.cs">
       <DependentUpon>CrystalWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProcessWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessWindow.Designer.cs">
+      <DependentUpon>ProcessWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CrystalWindow.resx">
       <DependentUpon>CrystalWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessWindow.resx">
+      <DependentUpon>ProcessWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
