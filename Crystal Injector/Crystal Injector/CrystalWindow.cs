@@ -14,7 +14,13 @@ namespace Crystal_Injector {
 
         private Button dllButton, processButton, injectButton;
 
+        private Crystal crystal;
+
+        public string filePath;
+
         public CrystalWindow() {
+            crystal = new Crystal();
+
             InitializeComponent();
 
             dllButton = new Button();
@@ -45,12 +51,20 @@ namespace Crystal_Injector {
         }
 
         private void dllButton_Click(object sender, EventArgs e) {
-            // TODO
-            MessageBox.Show("pressed button");
+            OpenFileDialog dllDialog = new OpenFileDialog();
+
+            dllDialog.Filter = "DLL Files (*.dll)|*.dll";
+            dllDialog.FilterIndex = 1;
+
+            dllDialog.Multiselect = false;
+
+            if (dllDialog.ShowDialog() == DialogResult.OK) {
+                filePath = dllDialog.FileName;
+            }
         }
 
         private void processButton_Click(object sender, EventArgs e) {
-            // TODO
+
         }
 
         private void injectButton_Click(object sender, EventArgs e) {
