@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.SuspendLayout();
             // 
             // CrystalWindow
             // 
@@ -30,7 +31,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Name = "CrystalWindow";
-            this.Text = "Crystal Injector v0.1";
+            this.Text = "Crystal Injector";
             this.Load += new System.EventHandler(this.CrystalWindow_Load);
             this.ResumeLayout(false);
 

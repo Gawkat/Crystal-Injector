@@ -18,9 +18,10 @@ namespace Crystal_Injector {
 
         public string filePath;
 
-        public CrystalWindow() {
+        public CrystalWindow() { // TODO: make gui pretty, add link to github, status label, add version label
             crystal = new Crystal();
 
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
 
             dllButton = new Button();
@@ -32,29 +33,36 @@ namespace Crystal_Injector {
             // 
             // dllButton
             // 
-            dllButton.Cursor = System.Windows.Forms.Cursors.Default;
             dllButton.Location = new System.Drawing.Point(0, 0);
             dllButton.Name = "dllButton";
             dllButton.Size = new System.Drawing.Size(75, 23);
             dllButton.TabIndex = 0;
             dllButton.Text = "Choose DLL";
-            dllButton.UseVisualStyleBackColor = true;
             dllButton.Click += dllButton_Click;
 
             // 
             // processButton
             // 
-            processButton.Cursor = System.Windows.Forms.Cursors.Default;
             processButton.Location = new System.Drawing.Point(0, 50);
-            processButton.Name = "processBUtton";
+            processButton.Name = "processButton";
             processButton.Size = new System.Drawing.Size(100, 23);
-            processButton.TabIndex = 0;
+            processButton.TabIndex = 1;
             processButton.Text = "Choose Process";
-            processButton.UseVisualStyleBackColor = true;
             processButton.Click += processButton_Click;
+
+            // 
+            // injectButton
+            // 
+            injectButton.Location = new System.Drawing.Point(0, 100);
+            injectButton.Name = "injectButton";
+            injectButton.Size = new System.Drawing.Size(100, 23);
+            injectButton.TabIndex = 2;
+            injectButton.Text = "Inject";
+            injectButton.Click += injectButton_Click;
 
             Controls.Add(dllButton);
             Controls.Add(processButton);
+            Controls.Add(injectButton);
 
             ResumeLayout();
         }
@@ -82,7 +90,7 @@ namespace Crystal_Injector {
         }
 
         private void injectButton_Click(object sender, EventArgs e) {
-            // TODO
+            // TODO: injectButton_Click
         }
 
     }

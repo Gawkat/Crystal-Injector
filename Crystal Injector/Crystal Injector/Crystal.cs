@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 
 namespace Crystal_Injector {
+
     class Crystal {
 
         public Process[] getProcesses() {
@@ -16,8 +17,9 @@ namespace Crystal_Injector {
             return processList;
         }
 
-        public void inject() {
-            // TODO
+        public void inject(Process process, string dll) {
+            // TODO: Inject method
         }
+
     }
 }
