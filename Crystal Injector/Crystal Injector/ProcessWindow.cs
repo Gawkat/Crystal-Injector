@@ -39,9 +39,9 @@ namespace Crystal_Injector {
             processListBox.Size = new System.Drawing.Size(225, 300);
             processListBox.Location = new System.Drawing.Point(0, 0);
             processListBox.MultiColumn = false;
+            processListBox.SelectionMode = SelectionMode.One;
             populateWithProcesses(processListBox);
             processListBox.SetSelected(0, true);
-            processListBox.SelectionMode = SelectionMode.One;
             processListBox.MouseDoubleClick += processListBox_MouseDoubleClick;
 
             //
@@ -94,15 +94,19 @@ namespace Crystal_Injector {
             ResumeLayout();
         }
 
+        // Gets the PID of selected process, sets the PID in Crystal.cs to selected and disposes of the ProcessWindow dialog
         private void openButton_Click(object sender, EventArgs e) {
-            // TODO: openButton_Click
             if (processListBox.SelectedItem is string) {
                 string tempString = (string)processListBox.SelectedItem;
                 string[] processString = tempString.Split('-');
                 int processID = 0;
                 Int32.TryParse(processString[0], out processID);
                 string processName = processString[1];
-                MessageBox.Show("NAME: " + processName + " ID: " + processID);
+                if (processID != 0) {
+                    crystal.setProcessID(processID);
+                    crystal.setProcessName(processName);
+                    Dispose();
+                }
             }
         }
 

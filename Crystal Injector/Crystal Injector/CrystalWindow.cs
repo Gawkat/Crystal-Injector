@@ -16,8 +16,6 @@ namespace Crystal_Injector {
 
         private Crystal crystal;
 
-        public string filePath;
-
         public CrystalWindow() { // TODO: make gui pretty, add link to github, status label, add version label
             crystal = new Crystal();
 
@@ -80,7 +78,7 @@ namespace Crystal_Injector {
             dllDialog.Multiselect = false;
 
             if (dllDialog.ShowDialog() == DialogResult.OK) {
-                filePath = dllDialog.FileName;
+                crystal.setdllPath(dllDialog.FileName);
             }
         }
 
@@ -90,7 +88,11 @@ namespace Crystal_Injector {
         }
 
         private void injectButton_Click(object sender, EventArgs e) {
-            // TODO: injectButton_Click
+            if (crystal.getProcessID() != 0 && crystal.getdllPath() != null) {
+                crystal.inject(crystal.getProcessID(), crystal.getdllPath());
+            } else {
+                // TODO: ?
+            }
         }
 
     }
