@@ -16,16 +16,18 @@ namespace Crystal_Injector {
         private Crystal crystal;
 
         private ListBox processListBox;
+
         private Button openButton, cancelButton, processButton, windowProcessButton;
 
         public ProcessWindow() { // TODO: make gui pretty
+            crystal = new Crystal();
+
             StartPosition = FormStartPosition.CenterParent;
             InitializeComponent();
 
-            crystal = new Crystal();
-
             processListBox = new ListBox();
 
+            // Buttons
             openButton = new Button();
             cancelButton = new Button();
             processButton = new Button();
@@ -33,9 +35,7 @@ namespace Crystal_Injector {
 
             SuspendLayout();
 
-            //
             // processListBox
-            //
             processListBox.Size = new Size(225, 300);
             processListBox.Location = new Point(0, 0);
             processListBox.MultiColumn = false;
@@ -44,9 +44,7 @@ namespace Crystal_Injector {
             processListBox.SetSelected(0, true);
             processListBox.MouseDoubleClick += processListBox_MouseDoubleClick;
 
-            //
             // openButton
-            //
             openButton.Location = new Point(0, 300);
             openButton.Name = "openButton";
             openButton.Size = new Size(100, 23);
@@ -54,9 +52,7 @@ namespace Crystal_Injector {
             openButton.Text = "Open Process";
             openButton.Click += openButton_Click;
 
-            //
             // cancelButton
-            //
             cancelButton.Location = new Point(100, 300);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(100, 23);
@@ -64,9 +60,7 @@ namespace Crystal_Injector {
             cancelButton.Text = "Cancel";
             cancelButton.Click += cancelButton_Click;
 
-            //
             // processButton
-            //
             processButton.Location = new Point(0, 350);
             processButton.Name = "processButton";
             processButton.Size = new Size(100, 23);
@@ -74,9 +68,7 @@ namespace Crystal_Injector {
             processButton.Text = "Process List";
             processButton.Click += processButton_Click;
 
-            //
             // windowProcessButton
-            //
             windowProcessButton.Location = new Point(100, 350);
             windowProcessButton.Name = "windowProcessButton";
             windowProcessButton.Size = new Size(100, 23);

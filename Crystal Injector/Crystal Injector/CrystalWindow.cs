@@ -13,11 +13,11 @@ namespace Crystal_Injector {
 
     public partial class CrystalWindow : Form {
 
+        private Crystal crystal;
+
         private Button dllButton, processButton, injectButton;
 
         private Label versionLabel, gitHubLabel;
-
-        private Crystal crystal;
 
         public CrystalWindow() { // TODO: make gui pretty, status label
             crystal = new Crystal();
