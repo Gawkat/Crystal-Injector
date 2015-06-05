@@ -14,6 +14,8 @@ namespace Crystal_Injector {
 
         private Button dllButton, processButton, injectButton;
 
+        private Label versionLabel;
+
         private Crystal crystal;
 
         public CrystalWindow() { // TODO: make gui pretty, add link to github, status label, add version label
@@ -22,45 +24,49 @@ namespace Crystal_Injector {
             StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
 
+            // Buttons
             dllButton = new Button();
             processButton = new Button();
             injectButton = new Button();
 
+            // Labels
+            versionLabel = new Label();
+
             SuspendLayout();
 
-            // 
             // dllButton
-            // 
-            dllButton.Location = new System.Drawing.Point(0, 0);
+            dllButton.Location = new Point(0, 0);
             dllButton.Name = "dllButton";
-            dllButton.Size = new System.Drawing.Size(75, 23);
+            dllButton.Size = new Size(75, 23);
             dllButton.TabIndex = 0;
             dllButton.Text = "Choose DLL";
             dllButton.Click += dllButton_Click;
 
-            // 
             // processButton
-            // 
-            processButton.Location = new System.Drawing.Point(0, 50);
+            processButton.Location = new Point(0, 50);
             processButton.Name = "processButton";
-            processButton.Size = new System.Drawing.Size(100, 23);
+            processButton.Size = new Size(100, 23);
             processButton.TabIndex = 1;
             processButton.Text = "Choose Process";
             processButton.Click += processButton_Click;
 
-            // 
             // injectButton
-            // 
-            injectButton.Location = new System.Drawing.Point(0, 100);
+            injectButton.Location = new Point(0, 100);
             injectButton.Name = "injectButton";
-            injectButton.Size = new System.Drawing.Size(100, 23);
+            injectButton.Size = new Size(100, 23);
             injectButton.TabIndex = 2;
             injectButton.Text = "Inject";
             injectButton.Click += injectButton_Click;
 
+            // versionLabel
+            versionLabel.Location = new Point(0, Height - versionLabel.Height);
+            versionLabel.Text = "Version: " + crystal.getVersion();
+
             Controls.Add(dllButton);
             Controls.Add(processButton);
             Controls.Add(injectButton);
+
+            Controls.Add(versionLabel);
 
             ResumeLayout();
         }

@@ -36,8 +36,8 @@ namespace Crystal_Injector {
             //
             // processListBox
             //
-            processListBox.Size = new System.Drawing.Size(225, 300);
-            processListBox.Location = new System.Drawing.Point(0, 0);
+            processListBox.Size = new Size(225, 300);
+            processListBox.Location = new Point(0, 0);
             processListBox.MultiColumn = false;
             processListBox.SelectionMode = SelectionMode.One;
             populateWithProcesses(processListBox);
@@ -47,9 +47,9 @@ namespace Crystal_Injector {
             //
             // openButton
             //
-            openButton.Location = new System.Drawing.Point(0, 300);
+            openButton.Location = new Point(0, 300);
             openButton.Name = "openButton";
-            openButton.Size = new System.Drawing.Size(100, 23);
+            openButton.Size = new Size(100, 23);
             openButton.TabIndex = 0;
             openButton.Text = "Open Process";
             openButton.Click += openButton_Click;
@@ -57,9 +57,9 @@ namespace Crystal_Injector {
             //
             // cancelButton
             //
-            cancelButton.Location = new System.Drawing.Point(100, 300);
+            cancelButton.Location = new Point(100, 300);
             cancelButton.Name = "cancelButton";
-            cancelButton.Size = new System.Drawing.Size(100, 23);
+            cancelButton.Size = new Size(100, 23);
             cancelButton.TabIndex = 1;
             cancelButton.Text = "Cancel";
             cancelButton.Click += cancelButton_Click;
@@ -67,9 +67,9 @@ namespace Crystal_Injector {
             //
             // processButton
             //
-            processButton.Location = new System.Drawing.Point(0, 350);
+            processButton.Location = new Point(0, 350);
             processButton.Name = "processButton";
-            processButton.Size = new System.Drawing.Size(100, 23);
+            processButton.Size = new Size(100, 23);
             processButton.TabIndex = 2;
             processButton.Text = "Process List";
             processButton.Click += processButton_Click;
@@ -77,9 +77,9 @@ namespace Crystal_Injector {
             //
             // windowProcessButton
             //
-            windowProcessButton.Location = new System.Drawing.Point(100, 350);
+            windowProcessButton.Location = new Point(100, 350);
             windowProcessButton.Name = "windowProcessButton";
-            windowProcessButton.Size = new System.Drawing.Size(100, 23);
+            windowProcessButton.Size = new Size(100, 23);
             windowProcessButton.TabIndex = 3;
             windowProcessButton.Text = "Window List";
             windowProcessButton.Click += windowProcessButton_Click;
