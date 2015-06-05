@@ -63,15 +63,17 @@ namespace Crystal_Injector {
             // versionLabel
             versionLabel.Text = "Version: " + crystal.getVersion();
             versionLabel.Size = new Size(versionLabel.PreferredWidth, versionLabel.PreferredHeight);
-            versionLabel.Location = new Point(0, Height - versionLabel.Height); // TODO: remove hardcode?
+            versionLabel.Location = new Point(0, Height - versionLabel.Top - 50); // TODO: location
 
-            // gitHubLabel
+            // gitHubLabel + ToolTip
+            ToolTip gitHubLabelToolTip = new ToolTip();
+            gitHubLabelToolTip.SetToolTip(gitHubLabel, crystal.getGitHubPage());
             gitHubLabel.MouseEnter += gitHubLabel_MouseEnter;
             gitHubLabel.MouseLeave += gitHubLabel_MouseLeave;
             gitHubLabel.Click += gitHubLabel_Click;
             gitHubLabel.Text = "View on GitHub";
             gitHubLabel.Size = new Size(gitHubLabel.PreferredWidth, gitHubLabel.PreferredHeight);
-            gitHubLabel.Location = new Point(100, Height - 60); // TODO: location
+            gitHubLabel.Location = new Point(Width - gitHubLabel.Right - 15, Height - gitHubLabel.Top - 50); // TODO: location
 
             Controls.Add(dllButton);
             Controls.Add(processButton);
