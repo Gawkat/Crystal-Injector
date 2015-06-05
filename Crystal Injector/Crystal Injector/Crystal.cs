@@ -12,6 +12,8 @@ namespace Crystal_Injector {
 
         private const string version = "0.1";
 
+        private const string gitHubPage = "https://github.com/Gawkat/Crystal-Injector";
+
         private static int processID = 0; // PID of Process
         private static string processName = null; // Name of Process
         private static string dllPath = null; // Path, includes nameofdll.dll
@@ -78,6 +80,10 @@ namespace Crystal_Injector {
 
         public string getVersion() {
             return version;
+        }
+
+        public string getGitHubPage() {
+            return gitHubPage;
         }
 
         public void setProcessID(int pid) {

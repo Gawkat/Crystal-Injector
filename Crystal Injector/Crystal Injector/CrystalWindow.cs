@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Crystal_Injector {
 
@@ -14,11 +15,11 @@ namespace Crystal_Injector {
 
         private Button dllButton, processButton, injectButton;
 
-        private Label versionLabel;
+        private Label versionLabel, gitHubLabel;
 
         private Crystal crystal;
 
-        public CrystalWindow() { // TODO: make gui pretty, add link to github, status label, add version label
+        public CrystalWindow() { // TODO: make gui pretty, status label
             crystal = new Crystal();
 
             StartPosition = FormStartPosition.CenterScreen;
@@ -31,6 +32,7 @@ namespace Crystal_Injector {
 
             // Labels
             versionLabel = new Label();
+            gitHubLabel = new Label();
 
             SuspendLayout();
 
@@ -59,14 +61,24 @@ namespace Crystal_Injector {
             injectButton.Click += injectButton_Click;
 
             // versionLabel
-            versionLabel.Location = new Point(0, Height - versionLabel.Height);
             versionLabel.Text = "Version: " + crystal.getVersion();
+            versionLabel.Size = new Size(versionLabel.PreferredWidth, versionLabel.PreferredHeight);
+            versionLabel.Location = new Point(0, Height - versionLabel.Height); // TODO: remove hardcode?
+
+            // gitHubLabel
+            gitHubLabel.MouseEnter += gitHubLabel_MouseEnter;
+            gitHubLabel.MouseLeave += gitHubLabel_MouseLeave;
+            gitHubLabel.Click += gitHubLabel_Click;
+            gitHubLabel.Text = "View on GitHub";
+            gitHubLabel.Size = new Size(gitHubLabel.PreferredWidth, gitHubLabel.PreferredHeight);
+            gitHubLabel.Location = new Point(100, Height - 60); // TODO: location
 
             Controls.Add(dllButton);
             Controls.Add(processButton);
             Controls.Add(injectButton);
 
             Controls.Add(versionLabel);
+            Controls.Add(gitHubLabel);
 
             ResumeLayout();
         }
@@ -99,6 +111,18 @@ namespace Crystal_Injector {
             } else {
                 // TODO: ?
             }
+        }
+
+        private void gitHubLabel_MouseEnter(object sender, EventArgs e) {
+            gitHubLabel.Cursor = Cursors.Hand;
+        }
+
+        private void gitHubLabel_MouseLeave(object sender, EventArgs e) {
+            gitHubLabel.Cursor = Cursors.Default;
+        }
+
+        private void gitHubLabel_Click(object sender, EventArgs e) {
+            Process.Start(crystal.getGitHubPage());
         }
 
     }
